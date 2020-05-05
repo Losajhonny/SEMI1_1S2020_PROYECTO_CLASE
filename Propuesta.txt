@@ -1,0 +1,27 @@
+Propuesta
+
+Aplicacion - InvoGuate
+
+-- Problema --
+Turistas de otros paises que no tienen bastante dinero como para contratar a una persona
+intermedia para la comunicacion con la poblacion de un pais. Ademas los turistas deben de
+tener conocimiento de cuantos contagios, recuperados o muertos hay en el pais
+
+-- Solucion --
+Crear una aplicacion en donde el usuario pueda interactuar con texto o entrada de voz
+con una persona, ademas de poder utilizar este software como aprendizaje del idioma de un pais,
+mediante opciones de traduccion o aprendizaje. Agregando consultas del covid19 por pais.
+
+-- Requerimientos --
+Como turista quiero que comprendan lo que estoy diciendo para tener una comunicacion clara.
+Como usuario quiero informacion de la pandemia covid19.
+
+-- Descripcion --
+Amazon Web Services (AWS) es una plataforma de servicio de la nube que ofrece potencia 
+de computo, almacenamiento de base de datos, entrega de contenido y otra funcionalidad 
+para ayudar a las empresas a escalar y crecer.
+
+Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realice la 
+aplicacion InvoGuate para que los turistas puedan comunicarse con los paises donde viajan, 
+y asi tener una comunicacion clara sin la necesidad de un interprete o intermediario.
+Adicional a eso tener informacion de covid19.

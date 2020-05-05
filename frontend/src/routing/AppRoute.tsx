@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './../componentes/app/App';
+import Home from './../componentes/home/Home';
 
 class AppRoute extends Component
 {
@@ -9,8 +10,8 @@ class AppRoute extends Component
         return(
             <Router>
                 <Switch>
-                    <Route path="/" component={App} />
-                    <Route component={App /*Page 404*/} />
+                    <Route exec path="/" component={Home} />
+                    <Route exec component={App /*Page 404*/} />
                 </Switch>
             </Router>
         );
