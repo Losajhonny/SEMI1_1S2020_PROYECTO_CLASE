@@ -1,6 +1,0 @@
-- Escribir metodos post get update ...
-    - Se puede crear carpetas para metodos. Ejemplos
-        - GET
-        - POST
-        - UPDATE
-        - DELETE
