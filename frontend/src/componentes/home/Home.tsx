@@ -6,9 +6,12 @@ import Conexion from '../../conexion/Conexion';
 interface IHomeStates
 {
     lenguajes: any;
-    lenguajeActual: any;
+    currentLenguaje: any;
+    currentVoice: any;
     entrada: string;
     salida: string;
+    refSelectLenguaje?: any;
+    refSelectVoice?: any;
 }
 
 export default
@@ -19,37 +22,38 @@ class Home extends Component<any, IHomeStates>
 
         this.state = {
             lenguajes: [
-                {lenguaje: "Arabic", code:"arb"},
-                {lenguaje: "Chinese, Mandarin", code: "cmn-CN"},
-                {lenguaje: "Danish", code: "da-DK"},
-                {lenguaje: "Dutch", code: "nl-NL"},
-                {lenguaje: "English, Australian", code: "en-AU"},
-                {lenguaje: "English, British", code: "en-GB"},
-                {lenguaje: "English, Indian", code: "en-IN"},
-                {lenguaje: "English, US", code: "en-US"},
-                {lenguaje: "English, Welsh", code: "en-GB-WLS"},
-                {lenguaje: "French", code: "fr-FR"},
-                {lenguaje: "French, Canadian", code: "fr-CA"},
-                {lenguaje: "Hindi", code: "hi-IN"},
-                {lenguaje: "German", code: "de-DE"},
-                {lenguaje: "Icelandic", code: "is-IS"},
-                {lenguaje: "Italian", code: "it-IT"},
-                {lenguaje: "Japanese", code: "ja-JP"},
-                {lenguaje: "Korean", code: "ko-KR"},
-                {lenguaje: "Norwegian", code: "nb-NO"},
-                {lenguaje: "Polish", code: "pl-PL"},
-                {lenguaje: "Portuguese, Brazilian", code: "pt-BR"},
-                {lenguaje: "Portuguese, European", code: "pt-PT"},
-                {lenguaje: "Romanian", code: "ro-RO"},
-                {lenguaje: "Russian", code: "ru-RU"},
-                {lenguaje: "Spanish, European", code: "es-ES"},
-                {lenguaje: "Spanish, Mexican", code: "es-MX"},
-                {lenguaje: "Spanish, US", code: "es-US"},
-                {lenguaje: "Swedish", code: "sv-SE"},
-                {lenguaje: "Turkish", code: "tr-TR"},
-                {lenguaje: "Welsh", code: "cy-GB"}
+                {lenguaje: "Aleman", voice: ["Marlene", "Vicki", "Hans"], code: "da-DE", trans: "de"},
+                {lenguaje: "Chino", voice: ["Zhiyu"], code: "cmn-CN", trans: "zh-TW"},
+                {lenguaje: "Coreano", voice: ["Seoyeon"], code: "ko-KR", trans: "ko"},
+                {lenguaje: "Danes", voice: ["Naja", "Mads"], code: "da-DK", trans: "da"},
+                {lenguaje: "Español (EE.UU.)", voice: ["Penelope", "Lupe", "Miguel"], code: "es-US", trans: "es"},
+                {lenguaje: "Español (España)", voice: ["Lucia", "Conchita", "Enrique"], code: "es-ES", trans: "es"},
+                {lenguaje: "Español (Mexico)", voice: ["Mia"], code: "es-MX", trans: "es-MX"},
+                {lenguaje: "Frences", voice: ["Celine", "Lea", "Mathieu"], code: "fr-FR", trans: "fr"},
+                {lenguaje: "Frances (Canada)", voice: ["Chantal"], code: "fr-CA", trans: "fr-CA"},
+                {lenguaje: "Gales", voice: ["Gwyneth"], code: "cy-GB", trans: "cy"},
+                {lenguaje: "Hindi", voice: ["Aditi"], code: "hi-IN", trans: "hi"},
+                {lenguaje: "Holandes", voice: ["Lotte", "Ruben"], code: "nl-NL", trans: "nl"},
+                {lenguaje: "Ingles (Australia)", voice: ["Nicole", "Russell"], code: "en-AU", trans: "en"},
+                {lenguaje: "Ingles (EE. UU.)", voice: ["Salli", "Joanna", "Ivy", "Kendra", "Kimberly", "Matthew", "Justin", "Joey"], code: "en-US", trans: "en"},
+                {lenguaje: "Ingles (Gales)", voice: ["Geraint"], code: "en-GB-WLS", trans: "en"},
+                {lenguaje: "Ingles (India)", voice: ["Raveena", "Aditi"], code: "en-IN", trans: "en"},
+                {lenguaje: "Ingles (Reino Unido)", voice: ["Amy", "Emma", "Brian"], code: "en-GB", trans: "en"},
+                {lenguaje: "Islandes", voice: ["Dora", "Karl"], code: "is-IS", trans: "id"},
+                {lenguaje: "Italiano", voice: ["Bianca", "Carla", "Giorgio"], code: "it-IT", trans: "it"},
+                {lenguaje: "Japones", voice: ["Mizuki", "Takumi"], code: "ja-JP", trans: "ja"},
+                /*{lenguaje: "Noruego", voice: ["Liv"], code: "ng-NO", trans: "ng"},*/
+                {lenguaje: "Polaco", voice: ["Ewa", "Maja", "Jacek", "Jan"], code: "pl-PL", trans: "pl"},
+                {lenguaje: "Portugues", voice: ["Ines", "Cristiano"], code: "pt-PT", trans: "pt"},
+                {lenguaje: "Portugues (Brasil)", voice: ["Vitoria", "Camila", "Ricardo"], code: "pt-BR", trans: "pt"},
+                {lenguaje: "Rumano", voice: ["Carmen"], code: "ro-RO", trans: "ro"},
+                {lenguaje: "Ruso", voice: ["Tatyana", "Maxim"], code: "ru-RU", trans: "ru"},
+                {lenguaje: "Sueco", voice: ["Astrid"], code: "sv-SE", trans: "sv"},
+                {lenguaje: "Turco", voice: ["Filiz"], code: "tr-TR", trans: "tr"},
+                {lenguaje: "Arabe", voice: ["Zeina"], code: "arb", trans: "ar"}
             ],
-            lenguajeActual: null,
+            currentLenguaje: null,
+            currentVoice: null,
             entrada: "",
             salida: ""
         };
@@ -59,34 +63,54 @@ class Home extends Component<any, IHomeStates>
         this.eventTraducir = this.eventTraducir.bind(this);
         this.eventVoz = this.eventVoz.bind(this);
         this.selectLenguaje = this.selectLenguaje.bind(this);
+        this.selectVoice = this.selectVoice.bind(this);
     }
 
     changeEntrada(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        // cambiar entrada de texto
         this.setState({ entrada: e.target.value });
     }
 
     changeSalida(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        // cambiar salida de texto
         this.setState({ salida: e.target.value });
     }
 
     selectLenguaje(e: React.ChangeEvent<HTMLSelectElement>) {
+        // obtener los lenguajes que hay
         const { lenguajes } = this.state;
-        this.setState({ lenguajeActual: lenguajes[e.target.value] });
+
+        // obtener el lenguaje actual
+        this.setState({ currentLenguaje: lenguajes[e.target.value], currentVoice: null });
+    }
+
+    selectVoice(e: React.ChangeEvent<HTMLSelectElement>) {
+        // obtener lenguaje actual
+        const { currentLenguaje } = this.state;
+
+        // obtener voz actual
+        this.setState({ currentVoice: currentLenguaje.voice[e.target.value] });
     }
 
     async eventTraducir() {
-        const { entrada } = this.state;
-        console.log("btn-traducir");
+        // test event
+        // console.log("btn-traducir");
+
+        // obtener datos
+        const { entrada, currentLenguaje } = this.state;
 
         if(entrada === "") return;
+        if(currentLenguaje === null) return;
 
         let info = {
             text: entrada,
-            target: "es"
+            target: currentLenguaje.trans
         };
 
+        // consumir servicio post api gateway
         let res = await Conexion.getInstance().POST(info, Conexion.locationTraducir);
 
+        // validar respuesta
         if(res === null) {
             console.log("error conexion");
             return;
@@ -96,23 +120,32 @@ class Home extends Component<any, IHomeStates>
             console.log(res.message);
             return;
         }
+
+        if(res.data !== null) return;
         
+        // success
         this.setState({ salida: res.data.TranslatedText });
     }
 
     async eventVoz() {
-        const { salida } = this.state;
-        console.log("btn-voz");
+        // test event
+        // console.log("btn-voz");
+
+        // obtener datos
+        const { salida, currentVoice } = this.state;
 
         if(salida === "") return;
+        if(currentVoice === null) return;
 
         let info = {
             text: salida,
-            voice: "Penelope"
+            voice: currentVoice
         }
 
+        // consumir servicio post api gateway
         let res = await Conexion.getInstance().POST(info, Conexion.locationPolly);
 
+        // validar respuestas
         if(res === null) {
             console.log("error conexion");
             return;
@@ -123,6 +156,9 @@ class Home extends Component<any, IHomeStates>
             return;
         }
         
+        if(res.data !== null) return;
+        
+        // success
         let data = res.data;
 
         var uint8Array = new Uint8Array(data.AudioStream.data);
@@ -136,14 +172,24 @@ class Home extends Component<any, IHomeStates>
 
     render()
     {
-        const { lenguajes, entrada, salida } = this.state;
+        const { lenguajes, entrada, salida, currentLenguaje } = this.state;
         const arrayLenguajes = [];
+        const arrayVoices = [];
 
         for(let i = 0; i < lenguajes.length; i++)
         {
             arrayLenguajes.push(
                 <option key={i.toString()} value={i.toString()}>{lenguajes[i].lenguaje}</option>
             )
+        }
+
+        if(currentLenguaje !== null) {
+            for(let i = 0; i < currentLenguaje.voice.length; i++)
+            {
+                arrayVoices.push(
+                    <option key={i.toString()} value={i.toString()}>{currentLenguaje.voice[i]}</option>
+                )
+            }
         }
 
         return (
@@ -170,10 +216,28 @@ class Home extends Component<any, IHomeStates>
                     </div>
 
                     <div className="form-group">
-                        <label className="text-muted" htmlFor="in-lenguajes">Lenguajes</label>
-                        <select className="custom-select" id="in-lenguajes" defaultValue="Choose..." onChange={e => this.selectLenguaje(e)}>
-                            <option>Choose...</option>
+                        <label className="text-muted" htmlFor="in-lenguajes">Lenguaje</label>
+                        <select
+                            className="custom-select"
+                            id="in-lenguajes"
+                            defaultValue="Choose lenguaje..."
+                            onChange={e => this.selectLenguaje(e)}
+                            >
+                            <option>Choose lenguaje...</option>
                             {arrayLenguajes}
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label className="text-muted" htmlFor="voices">Voz</label>
+                        <select
+                            className="custom-select"
+                            id="voices"
+                            defaultValue="Choose voice..."
+                            onChange={e => this.selectVoice(e)}
+                            >
+                            <option>Choose voice...</option>
+                            {arrayVoices}
                         </select>
                     </div>
 
