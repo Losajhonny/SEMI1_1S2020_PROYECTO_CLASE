@@ -121,7 +121,7 @@ class Home extends Component<any, IHomeStates>
             return;
         }
 
-        if(res.data !== null) return;
+        if(res.data === null) return;
         
         // success
         this.setState({ salida: res.data.TranslatedText });
@@ -156,7 +156,7 @@ class Home extends Component<any, IHomeStates>
             return;
         }
         
-        if(res.data !== null) return;
+        if(res.data === null) return;
         
         // success
         let data = res.data;
