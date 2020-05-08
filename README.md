@@ -8,7 +8,7 @@ Otro problema es la situación de la pandemia **COVID19**, esta enfermedad esta 
 
 ## Solución
 
-Crear una aplicación en donde se pueda acceder en cualquier parte, para que el usuario pueda comunicarse interactuando con texto o entrada de voz con las personas del país que vistará. Además de tener una sección de noticias de contagios por **COVID19** de los paises.
+Crear una aplicación en donde se pueda acceder en cualquier parte, para que el usuario pueda comunicarse interactuando con texto o entrada de voz con las personas del país que visitará. Además de tener una sección de noticias de contagios por **COVID19** de los paises.
 
 ### Descripción
 
@@ -17,3 +17,5 @@ Amazon Web Services (AWS) es una plataforma de servicio de la nube que ofrece po
 Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realice la  aplicacion InvoGuate para que las personas que viajan puedan comunicarse, y asi tener una comunicacion clara sin la necesidad de un interprete o intermediario. Adicional a eso tener informacion de covid19.
 
 ### Arquitectura
+
+![Arquitectura](https://octodex.github.com/images/yaktocat.png)
