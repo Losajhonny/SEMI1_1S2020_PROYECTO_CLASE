@@ -24,4 +24,10 @@ Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realic
 
 # Manual de usuario
 
+## Demo de aplicación
 
+Por cuestiones de tiempo no se pudo terminar la aplicación. Por lo solo esta la funcion de traducir y reproducir el texto traducido.
+
+Al momento de entrar al sitio web se muestra una aplicación interactiva en donde el usuario puede ingresar el texto a traducir, además, de poder elegir el lenguaje para la traducción, adicionalmente la opción de elegir la voz que mas le guste para que se pueda reproducir el audio.
+
+![App](https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/invoguate.png)
