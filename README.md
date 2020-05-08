@@ -18,6 +18,4 @@ Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realic
 
 ### Arquitectura
 
-<div class="text-center">
-![Arquitectura](https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/arquitectura.png)
-</div>
+![Arquitectura]<div class="text-center">(https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/arquitectura.png)</div>
