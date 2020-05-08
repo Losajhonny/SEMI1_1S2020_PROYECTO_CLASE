@@ -18,11 +18,6 @@ Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realic
 
 ### Arquitectura
 
-{:.mycenter}
+<div class="text-center">
 ![Arquitectura](https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/arquitectura.png)
-
-<style>
-.mycenter {
-    text-align:center;
-}
-</style>
+</div>
