@@ -18,4 +18,4 @@ Usted como estudiante de Ingenieria de ciencias y sistemas se le pide que realic
 
 ### Arquitectura
 
-![Arquitectura](https://octodex.github.com/images/yaktocat.png)
+![Arquitectura](https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/arquitectura.png)
