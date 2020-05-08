@@ -30,8 +30,6 @@ Por cuestiones de tiempo no se pudo terminar la aplicación. Por lo que solo est
 
 Al momento de entrar al sitio web se muestra una aplicación interactiva en donde el usuario puede ingresar el texto a traducir, además, de poder elegir el lenguaje para la traducción, adicionalmente la opción de elegir la voz que mas le guste para que se pueda reproducir el audio.
 
-En la siguiente direccion puede encontrar la aplicación funcional.
-
-[InvoGuate](http://bucket-fotos-25.s3-website.us-east-2.amazonaws.com)
+En la siguiente direccion puede encontrar la aplicación funcional. [InvoGuate](http://bucket-fotos-25.s3-website.us-east-2.amazonaws.com)
 
 ![App](https://github.com/Losajhonny/SEMI1_1S2020_PROYECTO_CLASE/blob/master/frontend/src/recursos/invoguate.png)
